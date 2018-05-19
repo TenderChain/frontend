@@ -6,11 +6,11 @@ export default {
 
 <template>
     <md-list>
-      <md-list-item>
+      <md-list-item to="/">
         <md-icon>view_compact</md-icon>
         <span class="md-list-item-text">Dashboard</span>
       </md-list-item>
-      <md-list-item>
+      <md-list-item to="add">
         <md-icon>control_point</md-icon>
         <span class="md-list-item-text">Create</span>
       </md-list-item>
