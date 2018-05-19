@@ -7,23 +7,46 @@ export default {
 <template>
     <md-list>
       <md-list-item>
-        <md-icon>move_to_inbox</md-icon>
-        <span class="md-list-item-text">Inbox</span>
+        <md-icon>view_compact</md-icon>
+        <span class="md-list-item-text">Dashboard</span>
+      </md-list-item>
+      <md-list-item>
+        <md-icon>control_point</md-icon>
+        <span class="md-list-item-text">Create</span>
       </md-list-item>
 
-      <md-list-item>
-        <md-icon>send</md-icon>
-        <span class="md-list-item-text">Sent Mail</span>
+      <md-list-item md-expand>
+        <md-icon>search</md-icon>
+        <span class="md-list-item-text">Search</span>
+
+        <md-list slot="md-expand">
+            <md-list-item class="md-inset">by Name</md-list-item>
+            <md-list-item class="md-inset">by Requirements</md-list-item>
+          </md-list>
       </md-list-item>
 
-      <md-list-item>
-        <md-icon>delete</md-icon>
-        <span class="md-list-item-text">Trash</span>
+      <md-list-item md-expand>
+        <md-icon>dns</md-icon>
+        <span class="md-list-item-text">Manage</span>
+
+        <md-list slot="md-expand">
+            <md-list-item class="md-inset">My tenders</md-list-item>
+            <md-list-item class="md-inset">My participation</md-list-item>
+        </md-list>
       </md-list-item>
 
-      <md-list-item>
-        <md-icon>error</md-icon>
-        <span class="md-list-item-text">Spam</span>
+      <md-list-item md-expand>
+        <md-icon>settings</md-icon>
+        <span class="md-list-item-text">Config</span>
+
+        <md-list slot="md-expand">
+            <md-list-item class="md-inset">Notifications</md-list-item>
+            <md-list-item class="md-inset">Settings</md-list-item>
+            <md-list-item class="md-inset">About</md-list-item>
+            <md-list-item class="md-inset">Sign out</md-list-item>
+          </md-list>
       </md-list-item>
+      
+
     </md-list>
 </template>
