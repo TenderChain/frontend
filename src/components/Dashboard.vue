@@ -63,47 +63,53 @@
       <md-button>See all</md-button>
     </md-card-actions>
   </md-table>
-  <md-table md-card>
-      <md-table-toolbar>
-        <h1 class="md-title">Your offers</h1>
-      </md-table-toolbar>
+    <md-table md-card>
+    <md-table-toolbar>
+      <h1 class="md-title">Your offers</h1>
+    </md-table-toolbar>
 
-      <md-table-row>
-        <md-table-head md-numeric>ID</md-table-head>
-        <md-table-head>Name</md-table-head>
-        <md-table-head>Email</md-table-head>
-        <md-table-head>Gender</md-table-head>
-        <md-table-head>Job Title</md-table-head>
-      </md-table-row>
+    <md-table-row>
+      <md-table-head md-numeric>ID</md-table-head>
+      <md-table-head>Name</md-table-head>
+      <md-table-head>Description</md-table-head>
+      <md-table-head>Time to end</md-table-head>
+    </md-table-row>
 
-      <md-table-row>
-        <md-table-cell md-numeric>1</md-table-cell>
-        <md-table-cell>Shawna Dubbin</md-table-cell>
-        <md-table-cell>sdubbin0@geocities.com</md-table-cell>
-        <md-table-cell>Male</md-table-cell>
-        <md-table-cell>Assistant Media Planner</md-table-cell>
-      </md-table-row>
+    <md-table-row class="">
+      <md-table-cell md-numeric>1</md-table-cell>
+      <md-table-cell>Shawna Dubbin</md-table-cell>
+      <md-table-cell>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+         Optio itaque ea, nostrum odio.
+        </md-table-cell>
+      <md-table-cell>1d 12h</md-table-cell>
+    </md-table-row>
 
-      <md-table-row>
-        <md-table-cell md-numeric>2</md-table-cell>
-        <md-table-cell>Odette Demageard</md-table-cell>
-        <md-table-cell>odemageard1@spotify.com</md-table-cell>
-        <md-table-cell>Female</md-table-cell>
-        <md-table-cell>Account Coordinator</md-table-cell>
-      </md-table-row>
+    <md-table-row>
+      <md-table-cell md-numeric>2</md-table-cell>
+      <md-table-cell>Odette Demageard</md-table-cell>
+      <md-table-cell>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.Dolores,
+         sed accusantium quasi non.
+      </md-table-cell>
+      <md-table-cell>36d 3h</md-table-cell>
+    </md-table-row>
 
-      <md-table-row>
-        <md-table-cell md-numeric>3</md-table-cell>
-        <md-table-cell>Vera Taleworth</md-table-cell>
-        <md-table-cell>vtaleworth2@google.ca</md-table-cell>
-        <md-table-cell>Male</md-table-cell>
-        <md-table-cell>Community Outreach Specialist</md-table-cell>
-      </md-table-row>
+    <md-table-row>
+      <md-table-cell md-numeric>3</md-table-cell>
+      <md-table-cell>Vera Taleworth</md-table-cell>
+      <md-table-cell>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+      </md-table-cell>
+      <md-table-cell>1m 12d</md-table-cell>
+    </md-table-row>
 
-      <md-card-actions md-alignment="right">
-        <md-button>See all</md-button>
-      </md-card-actions>
-    </md-table>
+    <md-card-actions md-alignment="right">
+      <md-button>See all</md-button>
+    </md-card-actions>
+  </md-table>
   </div>
 </template>
 
