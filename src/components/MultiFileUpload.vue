@@ -6,9 +6,9 @@
       single: null,
       placeholder: null,
       disabled: null,
-      multiple: null
-    })
-  }
+      multiple: null,
+    }),
+  };
 </script>
 
 <template>
