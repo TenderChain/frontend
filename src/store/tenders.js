@@ -12,10 +12,18 @@ export default new Vuex.Store({
   mutations: {
     add_tender(state, tender) {
       state.my_tenders.push(tender);
-      state.recent.push(tender);
+      state.recent.push(tender);  
     },
     add_offer(state, offer) {
       state.recent[state.recent.length-1].push(offer);
     },
   },
+  getters: {
+    getTenderByTimestamp: (state) => (timestamp) => {
+      let tmp =  state.recent.find((tender)=>(
+        tender.timestamp == timestamp));
+      console.log(state.recent);
+      return tmp;
+    },
+  }
 });
