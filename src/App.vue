@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <md-toolbar class="md-primary">
-        <h1 class="md-title">TenderChart</h1>
+        <h1 class="md-title">TenderChain</h1>
     </md-toolbar>
     <md-app>
 
