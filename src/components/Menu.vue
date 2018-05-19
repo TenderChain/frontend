@@ -46,7 +46,5 @@ export default {
             <md-list-item class="md-inset">Sign out</md-list-item>
           </md-list>
       </md-list-item>
-      
-
     </md-list>
 </template>
