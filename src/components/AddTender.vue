@@ -1,12 +1,20 @@
 <script>
 import MultiFileUpload from './MultiFileUpload';
 import AddParticipants from './AddParticipants';
+import RequirementRow from './RequirementRow';
 export default {
   name: 'AddTender',
   components: {
       MultiFileUpload,
       AddParticipants,
-  }
+      RequirementRow,
+  },
+  data() {
+    return {
+      selectedDate: '',
+      req_array: [1],
+    };
+  },
 };
 </script>
 
@@ -37,11 +45,22 @@ export default {
           </div>
 
           <div class="md-layout md-gutter">
-              <div class="md-layout-item md-small-size-100">
-            <md-field>
-            <label>Descriptions</label>
-            <md-textarea v-model="textarea"></md-textarea>
-            </md-field>
+            <div class="md-layout-item md-small-size-100">
+              <md-table>
+                <requirement-row
+                  :key="id"
+                  :id="id"
+                  :array="req_array"
+                  v-for="id in req_array"
+                >
+                </requirement-row>
+              </md-table>
+              <md-button
+                @click="req_array.push(req_array.length+1)"
+                class="md-raised"
+              >
+                Add another requirement
+              </md-button>
             </div>
           </div>
 
@@ -67,4 +86,3 @@ export default {
     </form>
   </div>
 </template>
-
