@@ -32,6 +32,7 @@
       <md-table-head md-numeric>#</md-table-head>
       <md-table-head>Name</md-table-head>
       <md-table-head>Requirements</md-table-head>
+      <md-table-head>Offerents</md-table-head>
       <md-table-head>Time to end</md-table-head>
     </md-table-row>
 
@@ -45,6 +46,7 @@
           {{req.name+", "}}
         </span>
       </md-table-cell>
+      <md-table-cell>{{el.offerents}}</md-table-cell>
       <md-table-cell>{{eta(el.date)}}</md-table-cell>
     </md-table-row>
 
