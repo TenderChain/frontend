@@ -73,6 +73,12 @@ export default {
 
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
+              <md-button
+                @click="addReq()"
+                class="md-primary"
+              >
+                Add another requirement
+              </md-button>
               <md-table>
                 <requirement-row
                   :key="id"
@@ -83,12 +89,6 @@ export default {
                 >
                 </requirement-row>
               </md-table>
-              <md-button
-                @click="addReq()"
-                class="md-primary"
-              >
-                Add another requirement
-              </md-button>
             </div>
           </div>
           <br>
