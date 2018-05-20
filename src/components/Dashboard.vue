@@ -21,6 +21,7 @@ import DashboardAlert from './DashboardAlert';
 <template>
   <div class="centered-container">
     <dashboard-alert
+      v-if="$store.state.alert"
       :name="$store.state.alert.name"
       :info="$store.state.alert.info"
       :btn-label="$store.state.alert.btnLabel"
