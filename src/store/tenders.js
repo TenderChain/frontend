@@ -6,6 +6,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    'alert': {
+      name: 'Your tender is about to end!',
+      info:
+        `You can start reviewing offers.
+         After the deadline you will have 2 weeks to choose a winner.`,
+      btnLabel: 'Go to tender',
+      },
     'user': 'Aubrey James',
     'my_tenders': [{
       'name': 'Trams for Cracow',
