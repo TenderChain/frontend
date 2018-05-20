@@ -2,6 +2,7 @@
 import MultiFileUpload from './MultiFileUpload';
 import AddParticipants from './AddParticipants';
 import RequirementRow from './RequirementRow';
+
 export default {
   name: 'AddTender',
   components: {
@@ -31,6 +32,7 @@ export default {
         date: this.selectedDate,
         fileNames: this.selectedFiles,
         requirements: this.requirements,
+        timestamp: new Date().getTime(),
       };
       this.showSnackbar = !this.showSnackbar;
       this.$store.commit('add_tender', tender);

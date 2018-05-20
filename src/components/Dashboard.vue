@@ -5,28 +5,9 @@ import DashboardAlert from './DashboardAlert';
     name: 'Dashboard',
     data() {
       return {
-        recent: [
-          {
-            id: 11234343,
-            name: 'Business cards',
-            desc:
-              'Business cards made from hard cardboard with company\'s logo',
-            eta: '1d 23h',
-          }, {
-            id: 17373,
-            name: 'Business cards',
-            desc:
-              'Business cards made from hard cardboard with company\'s logo',
-            eta: '1d 23h',
-          }, {
-            id: 28493982,
-            name: 'Business cards',
-            desc:
-              'Business cards made from hard cardboard with company\'s logo',
-            eta: '1d 23h',
-          }],
-        tenders: [{}, {}, {}],
-        offers: [{}, {}, {}],
+        recent: this.$store.state.recent,
+        tenders: this.$store.state.my_tenders,
+        offers: this.$store.state.my_offers,
         alert: {
           name: 'Your tender is about to end!',
           info:
@@ -52,8 +33,8 @@ import DashboardAlert from './DashboardAlert';
       :btn-label="alert.btnLabel"
     />
     <dashboard-card :list="recent" name="Recent tenders"/>
-    <dashboard-card :list="recent" name="Your tenders"/>
-    <dashboard-card :list="recent" name="Your offers"/>
+    <dashboard-card :list="tenders" name="Your tenders"/>
+    <dashboard-card :list="offers" name="Your offers"/>
   </div>
 </template>
 

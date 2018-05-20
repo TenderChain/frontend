@@ -5,6 +5,19 @@
       list: Array,
       name: String,
     },
+    methods: {
+      eta(deadlineDate) {
+        let oneDay = 1000*60*60*24;
+        let oneHour = 1000*60*60;
+        let today = new Date().getTime();
+        let deadline = new Date(deadlineDate).getTime();
+
+        return `
+          ${((deadline-today)/oneDay).toFixed(0)}d
+           ${(((deadline-today)%oneDay)/oneHour).toFixed(0)}h
+           `;
+      },
+    },
   };
 
 </script>
@@ -18,15 +31,21 @@
     <md-table-row>
       <md-table-head md-numeric>#</md-table-head>
       <md-table-head>Name</md-table-head>
-      <md-table-head>Description</md-table-head>
+      <md-table-head>Requirements</md-table-head>
       <md-table-head>Time to end</md-table-head>
     </md-table-row>
 
     <md-table-row v-for="(el, index) in list" :key="el.id">
       <md-table-cell md-numeric>{{index+1}}</md-table-cell>
-      <md-table-cell>{{el.name}}</md-table-cell>
-      <md-table-cell>{{el.desc}}</md-table-cell>
-      <md-table-cell>{{el.eta}}</md-table-cell>
+      <md-table-cell>
+          <router-link :to="`/submit/${el.timestamp}`">{{el.name}}</router-link>
+      </md-table-cell>
+      <md-table-cell>
+        <span v-for="req in el.requirements" :key="req.name">
+          {{req.name+", "}}
+        </span>
+      </md-table-cell>
+      <md-table-cell>{{eta(el.date)}}</md-table-cell>
     </md-table-row>
 
     <md-card-actions>
