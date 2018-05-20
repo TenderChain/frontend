@@ -12,8 +12,34 @@ export default {
   data() {
     return {
       selectedDate: '',
+      selectedFiles: [],
+      requirements: [{name: '', desc: ''}],
       req_array: [1],
+      showSnackbar: false,
     };
+  },
+  methods: {
+    saveFiles(files) {
+      this.selectedFiles = [];
+      for (let i=0; i<files.length; i++) {
+        this.selectedFiles.push(files[i].name);
+      }
+    },
+    afterSave() {
+      let tender = {
+        name: document.querySelector('#name').value,
+        date: this.selectedDate,
+        fileNames: this.selectedFiles,
+        requirements: this.requirements,
+      };
+      this.showSnackbar = !this.showSnackbar;
+      this.$store.commit('add_tender', tender);
+      window.setTimeout(()=>this.$router.push({path: '/'}), 800);
+    },
+    addReq() {
+      this.requirements.push({name: '', desc: ''});
+      this.req_array.push(this.req_array.length+1);
+    },
   },
 };
 </script>
@@ -21,7 +47,7 @@ export default {
 <template>
   <div>
     <form novalidate class="md-layout">
-      <md-card class="md-layout-item md-size-50 md-small-size-100">
+      <md-card class="md-layout-item md-size-100 md-small-size-100">
         <md-card-header>
           <div class="md-title">Add Tender</div>
         </md-card-header>
@@ -36,10 +62,9 @@ export default {
                 <span class="md-error" >Invalid name</span>
               </md-field>
             </div>
-
             <div class="md-layout-item md-small-size-100">
-                <md-datepicker v-model="selectedDate">
-                    <label>Select date</label>
+                <md-datepicker  v-model="selectedDate">
+                    <label>Select deadline</label>
                 </md-datepicker>
             </div>
           </div>
@@ -51,22 +76,23 @@ export default {
                   :key="id"
                   :id="id"
                   :array="req_array"
+                  :data="requirements"
                   v-for="id in req_array"
                 >
                 </requirement-row>
               </md-table>
               <md-button
-                @click="req_array.push(req_array.length+1)"
-                class="md-raised"
+                @click="addReq()"
+                class="md-primary"
               >
                 Add another requirement
               </md-button>
             </div>
           </div>
-
+          <br>
           <div class="md-layout md-gutter">
               <div class="md-layout-item md-small-size-100">
-              <multi-file-upload />
+                <multi-file-upload @new-files="saveFiles" />
               </div>
           </div>
 
@@ -78,11 +104,20 @@ export default {
         </md-card-content>
 
         <md-card-actions>
-          <md-button type="submit" class="md-primary">Create tender</md-button>
+          <md-button
+            @click="afterSave()"
+            class="md-raised md-accent"
+          >
+            Create tender
+          </md-button>
         </md-card-actions>
       </md-card>
 
-      <md-snackbar>The tender was saved with success!</md-snackbar>
+      <md-snackbar
+        :md-active.sync="showSnackbar"
+      >
+        The tender was saved with success!
+      </md-snackbar>
     </form>
   </div>
 </template>
