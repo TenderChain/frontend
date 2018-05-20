@@ -18,7 +18,7 @@
 <template>
   <div>
     <md-dialog :md-active.sync="showDialog">
-      <md-dialog-title>Add Participants</md-dialog-title>
+      <md-dialog-title>Invite Participants</md-dialog-title>
       <div>
         <form novalidate class="md-layout">
           <md-card-content>
@@ -70,7 +70,7 @@
     </md-dialog>
 
     <md-button class="md-primary" @click="showDialog = true">
-      Add participants
+      Invite participants
     </md-button>
   </div>
 </template>

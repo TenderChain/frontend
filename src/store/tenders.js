@@ -126,11 +126,7 @@ export default new Vuex.Store({
     add_offer(state, offer) {
       state.recent[state.recent.length-1].push(offer);
     },
-<<<<<<< f4c6500a6bb8e924569c6ca151139a1ff94b9445
-    inc_offerents(state, timestamp) {
-=======
-    inc_offerents(state, timestamp) {      
->>>>>>> handle count of offerents in tenders
+    inc_offerents(state, timestamp){
       let o = this.getters.getTenderByTimestamp(timestamp);
       console.log( "ts: ", timestamp, " ", o);
       if(o) {
