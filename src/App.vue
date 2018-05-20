@@ -43,11 +43,9 @@ export default {
 
 <style lang="scss" scoped>
   .user{
-    margin-top: 5px;
     font-size: 16px;
-    .md-icon-button{
-        margin-top: -5px;
-    }
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: sub;
   }
   h1{
     width:100%;
