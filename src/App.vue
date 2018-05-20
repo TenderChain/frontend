@@ -22,11 +22,10 @@
 
 <script>
 import MenuComp from './components/Menu';
+import Store from './store/tenders';
 export default {
   name: 'App',
-  data: () => ({
-
-  }),
+  store: Store,
   components: {
     MenuComp,
   },
