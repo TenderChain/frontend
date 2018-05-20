@@ -1,19 +1,23 @@
 <script>
   export default {
     name: 'MultiFile',
-    data: () => ({
-      initial: 'vue-material-is-awesome.jpg',
-      single: null,
-      placeholder: null,
-      disabled: null,
-      multiple: null,
-    }),
+    data() {
+      return {
+        multiple: [],
+      };
+    },
+    methods: {
+      newFiles(fileList) {
+        console.log(fileList);
+        this.$emit('new-files', fileList);
+      },
+    },
   };
 </script>
 
 <template>
     <md-field>
       <label>Attach documents</label>
-      <md-file v-model="multiple" multiple />
+      <md-file @md-change="newFiles" v-model="multiple" multiple />
     </md-field>
 </template>
