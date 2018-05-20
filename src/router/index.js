@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from '@/components/Login';
 import AddTender from '@/components/AddTender';
 import Dashboard from '@/components/Dashboard';
+import SubmitOffer from '@/components/SubmitOffer';
 
 Vue.use(Router);
 
@@ -23,5 +24,10 @@ export default new Router({
       name: 'Dashboard',
       component: Dashboard,
     },
+    {
+      path: '/submit/:ts',
+      name: 'SubmitOffer',
+      component: SubmitOffer
+    }
   ],
 });
