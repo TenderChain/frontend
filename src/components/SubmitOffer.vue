@@ -7,15 +7,20 @@ export default {
   },
   data() {
       return {
-          offer: {name: 'asdfadsf'},
-         textarea: '',
-         number: '',
+        offer: {name: 'asdfadsf'},
+        textarea: '',
+        number: '',
+        showSnackbar: false,
         }
   },
   methods: {
     getRecentTender (timestamp) {
       return this.$store.getters.getTenderByTimestamp(timestamp);
     },
+    afterSubmit() {
+        this.showSnackbar = !this.showSnackbar;
+        window.setTimeout(()=>this.$router.push({path: '/'}), 800);
+    }
   },
   
 };
@@ -52,11 +57,11 @@ export default {
           </md-card-content>
 
                <md-card-actions>
-          <md-button type="submit" class="md-primary">Submit offer</md-button>
+          <md-button class="md-primary" @click="afterSubmit()">Submit offer</md-button>
         </md-card-actions>
       </md-card>
 
-      <md-snackbar>The offer was saved with success!</md-snackbar>
+      <md-snackbar :md-active.sync="showSnackbar" >The offer was saved with success!</md-snackbar>
        </form>
 
 
