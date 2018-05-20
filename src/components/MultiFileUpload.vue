@@ -8,7 +8,6 @@
     },
     methods: {
       newFiles(fileList) {
-        console.log(fileList);
         this.$emit('new-files', fileList);
       },
     },
