@@ -1,7 +1,16 @@
 <template>
   <div class="page-container">
     <md-toolbar class="md-primary">
-        <h1 class="md-title">TenderChain</h1>
+        <h1 class="md-title">TenderChain
+        <span style="float: right">
+          <span class="user">
+            Hello, <strong>{{$store.state.user}}</strong>
+          </span>
+          <md-button class="md-icon-button md-flat">
+            <md-icon >settings</md-icon>
+          </md-button>
+        </span>
+        </h1>
     </md-toolbar>
     <md-app>
 
@@ -33,6 +42,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .user{
+    margin-top: 5px;
+    font-size: 16px;
+    .md-icon-button{
+        margin-top: -5px;
+    }
+  }
+  h1{
+    width:100%;
+  }
   .page-container{
     height: 93.5vh;
   }
