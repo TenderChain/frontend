@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    'user': 'Aubrey James',
     'my_tenders': [{
       'name': 'Trams for Cracow',
       'date':
@@ -66,24 +67,6 @@ export default new Vuex.Store({
       'timestamp': 1526804196605,
     }],
     'my_offers': [{
-      'name': 'Trams for Gotham',
-      'date': 'Date Wed Jul 04 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
-      'fileNames': ['chain-312011_1280.png'],
-      'requirements': [{
-        'name': 'Max speeed 250MPH',
-        'desc': '',
-      }, {
-        'name': 'No joker allowed',
-        'desc': '',
-      }, {
-        'name': '4k screens',
-        'desc': '',
-      }, {
-        'name': 'Anti joker sytem',
-        'desc': '',
-      }],
-      'timestamp': 1526804004255,
-    }, {
       'name': 'English training for intermediate',
       'date':
         'Date Wed May 30 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',

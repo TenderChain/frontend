@@ -34,17 +34,5 @@ export default {
             <md-list-item class="md-inset">My participation</md-list-item>
         </md-list>
       </md-list-item>
-
-      <md-list-item md-expand>
-        <md-icon>settings</md-icon>
-        <span class="md-list-item-text">Config</span>
-
-        <md-list slot="md-expand">
-            <md-list-item class="md-inset">Notifications</md-list-item>
-            <md-list-item class="md-inset">Settings</md-list-item>
-            <md-list-item class="md-inset">About</md-list-item>
-            <md-list-item class="md-inset">Sign out</md-list-item>
-          </md-list>
-      </md-list-item>
     </md-list>
 </template>
