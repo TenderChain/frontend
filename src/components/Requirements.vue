@@ -45,7 +45,7 @@ import Row from './Row'
       ]
     }),
     props: {
-      requirementsList: []
+      requirementsList: Array
     },
     methods: {
       onSelect (items) {
