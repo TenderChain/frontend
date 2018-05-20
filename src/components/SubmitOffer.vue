@@ -19,6 +19,7 @@ export default {
     },
     afterSubmit() {
         this.showSnackbar = !this.showSnackbar;
+        this.$store.commit('inc_offerents', this.$route.params.ts);
         window.setTimeout(()=>this.$router.push({path: '/'}), 800);
     }
   },

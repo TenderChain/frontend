@@ -33,6 +33,7 @@ export default {
         fileNames: this.selectedFiles,
         requirements: this.requirements,
         timestamp: new Date().getTime(),
+        offerents: 0,
       };
       this.showSnackbar = !this.showSnackbar;
       this.$store.commit('add_tender', tender);
@@ -50,8 +51,6 @@ export default {
   <div>
     <form novalidate class="md-layout">
       <md-card class="md-layout-item md-size-100 md-small-size-100">
-       
-
         <md-card-content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
