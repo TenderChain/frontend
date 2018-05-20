@@ -50,9 +50,7 @@ export default {
   <div>
     <form novalidate class="md-layout">
       <md-card class="md-layout-item md-size-100 md-small-size-100">
-        <md-card-header>
-          <div class="md-title">Add Tender</div>
-        </md-card-header>
+       
 
         <md-card-content>
           <div class="md-layout md-gutter">
