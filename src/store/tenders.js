@@ -131,7 +131,7 @@ export default new Vuex.Store({
   mutations: {
     add_tender(state, tender) {
       state.my_tenders.push(tender);
-      state.recent.push(tender);
+      state.recent.splice(0, 0, tender);
     },
     add_offer(state, offer) {
       state.recent[state.recent.length-1].push(offer);
