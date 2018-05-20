@@ -8,13 +8,6 @@ import DashboardAlert from './DashboardAlert';
         recent: this.$store.state.recent,
         tenders: this.$store.state.my_tenders,
         offers: this.$store.state.my_offers,
-        alert: {
-          name: 'Your tender is about to end!',
-          info:
-            `You can start reviewing offers.
-             After the deadline you will have 2 weeks to choose a winner.`,
-          btnLabel: 'Go to tender',
-          },
       };
     },
     components: {
@@ -28,9 +21,9 @@ import DashboardAlert from './DashboardAlert';
 <template>
   <div class="centered-container">
     <dashboard-alert
-      :name="alert.name"
-      :info="alert.info"
-      :btn-label="alert.btnLabel"
+      :name="$store.state.alert.name"
+      :info="$store.state.alert.info"
+      :btn-label="$store.state.alert.btnLabel"
     />
     <dashboard-card :list="recent" name="Recent tenders"/>
     <dashboard-card :list="tenders" name="Your tenders"/>

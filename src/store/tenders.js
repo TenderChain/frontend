@@ -6,10 +6,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    'alert': {
+      name: 'Your tender is about to end!',
+      info:
+        `You can start reviewing offers.
+         After the deadline you will have 2 weeks to choose a winner.`,
+      btnLabel: 'Go to tender',
+      },
     'user': 'Aubrey James',
     'my_tenders': [{
       'name': 'Trams for Cracow',
-      'offerents': 0,
+      'offerents': 8,
       'date':
         'Date Thu May 31 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': ['link-symbol-of-two-chains-links-linked_318-50708.jpg'],
@@ -23,7 +30,7 @@ export default new Vuex.Store({
       'timestamp': 1526803166303,
     }, {
       'name': 'English training for beginners',
-      'offerents': 0,
+      'offerents': 25,
       'date': 'Date Mon May 21 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': [],
       'requirements': [{
@@ -55,7 +62,7 @@ export default new Vuex.Store({
       'timestamp': 1526804004255,
     }, {
       'name': 'English training for beginners',
-      'offerents': 0,
+      'offerents': 123,
       'date': 'Date Wed May 30 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': [],
       'requirements': [{
@@ -72,7 +79,7 @@ export default new Vuex.Store({
     }],
     'my_offers': [{
       'name': 'English training for intermediate',
-      'offerents': 0,
+      'offerents': 11,
       'date':
         'Date Wed May 30 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': [],
@@ -90,7 +97,7 @@ export default new Vuex.Store({
     }],
     'recent': [{
       'name': 'Trams for Cracow',
-      'offerents': 0,
+      'offerents': 3,
       'date':
         'Date Thu May 31 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': ['link-symbol-of-two-chains-links-linked_318-50708.jpg'],
@@ -104,7 +111,7 @@ export default new Vuex.Store({
       'timestamp': 1526803166303,
     }, {
       'name': 'English training for beginners',
-      'offerents': 0,
+      'offerents': 9,
       'date':
         'Date Mon May 21 2018 00:00:00 GMT+0200 (Środkowoeuropejski czas letni)',
       'fileNames': [],
@@ -126,13 +133,13 @@ export default new Vuex.Store({
     add_offer(state, offer) {
       state.recent[state.recent.length-1].push(offer);
     },
-    inc_offerents(state, timestamp){
+    inc_offerents(state, timestamp) {
       let o = this.getters.getTenderByTimestamp(timestamp);
-      console.log( "ts: ", timestamp, " ", o);
-      if(o) {
+      console.log( 'ts: ', timestamp, ' ', o);
+      if (o) {
         o.offerents += 1;
       }
-    }
+    },
   },
   getters: {
     getTenderByTimestamp: (state) => (timestamp) => {
